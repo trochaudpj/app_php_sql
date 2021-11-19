@@ -12,6 +12,6 @@ echo "<form method='POST' action='traitement.php?action=addProd&id=" . $row['id'
 </select>
 <input   type="submit"></div>
 </form><?php 
-echo "<a href='modif-product.php?id=".$row['id']."'>Modifier</a>"; ?>
+echo "<a href='admin.php?id=".$row['id']."'>Modifier</a>"; ?>
 
 </div><br>

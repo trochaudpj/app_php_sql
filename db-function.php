@@ -25,6 +25,13 @@ function findAll()
     $stmt = connexion()->query($sql);
     return ($stmt->fetchAll());
 }
+function findAllCategorie()
+{
+    $sql = "SELECT * FROM categorie";
+    $stmt = connexion()->query($sql);
+  
+    return ($stmt->fetchAll());
+}
 
 function findOneById($id)
 {
@@ -35,28 +42,30 @@ function findOneById($id)
     return ($stmt->fetch());
 }
 
-function insertProduct($name, $description, $price,$img)
+function insertProduct($name, $description, $price,$img,$categorie)
 {
-    $sql = "INSERT INTO product (name, description, price, img) VALUES (:name,:description,:price,:img)";
+    $sql = "INSERT INTO product (name, description, price, img,categorie) VALUES (:name,:description,:price,:img,:categorie)";
     $bddtmp = connexion();
     $stmt = $bddtmp->prepare($sql);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":price", $price);
     $stmt->bindParam(":img", $img);
+    $stmt->bindParam(":categorie", $categorie);
     $stmt->execute();
     $lastId = $bddtmp->lastInsertId();
     return $lastId;
 }
-function modifProduct($name, $description, $price,$img,$id)
+function modifProduct($name, $description, $price,$img,$categorie,$id)
 {
-    $sql = "UPDATE product SET name =:name, description=:description, price=:price, img=:img where id=:id";
+    $sql = "UPDATE product SET name =:name, description=:description, price=:price, img=:img, categorie=:categorie where id=:id";
     $bddtmp = connexion();
     $stmt = $bddtmp->prepare($sql);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":price", $price);
     $stmt->bindParam(":img", $img);
+    $stmt->bindParam(":categorie", $categorie);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     $lastId = $bddtmp->lastInsertId();

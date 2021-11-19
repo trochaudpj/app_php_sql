@@ -18,8 +18,9 @@ if ($action) {
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
                 $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $img = filter_input(INPUT_POST, "img", FILTER_SANITIZE_URL);
+                $categorie = filter_input(INPUT_POST, "categorie", FILTER_VALIDATE_INT);
 
-                $redirect = insertProduct($name, $description, $price, $img);
+                $redirect = insertProduct($name, $description, $price, $img,$categorie);
 
                 setMessage("success", "Produit ajouté avec succès !");
                 redirect("product.php?id=" . $redirect);
@@ -34,8 +35,10 @@ if ($action) {
                 $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
                 $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $img = filter_input(INPUT_POST, "img", FILTER_SANITIZE_URL);
+                $categorie = filter_input(INPUT_POST, "categorie", FILTER_VALIDATE_INT);
+
                 $id = $_GET['id'];
-                $redirect = modifProduct($name, $description, $price, $img, $id);
+                $redirect = modifProduct($name, $description, $price, $img,$categorie, $id);
                 
                 setMessage("success", "Produit modifié avec succès !");
                 redirect("product.php?id=" . $id);

@@ -1,6 +1,10 @@
-<?php echo "<div   class='figure box " . $affichage ." " . $row['name_categorie'] ."'><img class='vignette' src='img/" . $row['img'] . "' width=200><br>";
+<?php echo "<div class='figure box ". $affichage." ";
+if (isset($row['name_categorie'])) echo  $row['name_categorie'] ;
+echo"'><img class='vignette' src='img/" . $row['img'] . "' width=200>";
 echo "<div><div><h2><a  href='product.php?id=" . $row['id'] . "'>" . $row['name'] ." ". "</a></h2></div><div><h2>" . $row['price'] . "€</h2></div></div><div><p>" . $row['description'] . "</p></div>";
-echo "<em>#". $row['name_categorie']."</em>";
+echo "";
+if (isset($row['name_categorie'])) echo '<em>#'. $row['name_categorie']."</em>" ;
+echo "</em>";
 echo "<form method='POST' action='traitement.php?action=addProd&id=" . $row['id'] . "'>"; 
 
 ?>

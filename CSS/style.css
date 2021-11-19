@@ -96,13 +96,23 @@ nav>.containerR{
 #gallery{
     display: flex;
 }
-#gallery #figure{
-  
-}
+
+#gallery .figure{
+    display:initial;
+   
+     
+ }
 #gallery .figure.hidden{
    display: none;
   
     
 }
+
+#gallery-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
  

@@ -32,32 +32,34 @@ include "menu.php";
                 <label class="form-label">
                     Categorie du produit :</label>
             </p><?php $loop = findAllCategorie();
-          
-            ?>
+
+                ?>
             <select class="form-control" name="categorie" value="<?php if (isset($page['categorie'])) echo $page['categorie'] ?>">
                 <?php
                 if (isset($loop)) {
                     foreach ($loop as $index => $id_categorie) {
-                ?> <option <?php if (isset($page['categorie'])){ if ($page['categorie']==$index) {echo "selected";}} 
-                            ?> value=<?php if (isset($index))  echo $index ?>><?php if (isset($index)) echo $id_categorie['name_categorie'] ?></option>
+                ?> <option <?php if (isset($page['categorie'])) {
+                                if ($page['categorie'] == $index) {
+                                    echo "selected";
+                                }
+                            }
+                            ?> value=<?php if (isset($index))  echo  $id_categorie['id_categorie'] ?>><?php if (isset($index)) echo $id_categorie['name_categorie'] ?></option>
                 <?php
                     }
                 }
                 ?>
 
-            </select>
-        </div>
-        <div class="container">
+            </select> 
+            <div class="container">
             <p>
                 <label class="form-label">
                     Description du produit :</label>
             </p>
             <textarea class="form-control" rows="5" cols="33" name="description" value="<?php if (isset($page['description'])) echo $page['description'] ?>"><?php if (isset($page['description'])) echo $page['description'] ?></textarea>
         </div>
-        <p>
             <input class="form-control" type="submit" name="submit" value="Valider">
-        </p>
-        </form>
+            </form>
+        </div>
+
     </div>
-</div>
-<?php include "footer.php"; ?>
+    <?php include "footer.php"; ?>

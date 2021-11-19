@@ -55,6 +55,16 @@ form>.container{
     text-align: left;
     flex-direction: column;
 }
+nav>.container{
+    width: fit-content;
+    text-align: left;
+  
+}
+nav>.containerR{
+    width: fit-content;
+    text-align: right;
+   
+}
 .vignette{
     border: 5px ridge  rgb(0, 0, 0);
     border-radius: 5px 25px;
@@ -82,4 +92,17 @@ form>.container{
     padding: 3em;
     
   }
+  
+#gallery{
+    display: flex;
+}
+#gallery #figure{
+  
+}
+#gallery .figure.hidden{
+   display: none;
+  
+    
+}
+
  

@@ -21,7 +21,7 @@ function connexion()
 
 function findAll()
 {
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product p INNER JOIN categorie c ON p.categorie=c.id_categorie";
     $stmt = connexion()->query($sql);
     return ($stmt->fetchAll());
 }

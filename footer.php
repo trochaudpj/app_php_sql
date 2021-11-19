@@ -4,6 +4,7 @@
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-</script></body>
+</script>
+<script src="JS/main.js"></script></body>
 
 </html>

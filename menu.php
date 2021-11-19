@@ -21,22 +21,27 @@ require_once("functions.php");
 <body>
     <div class="container">
         <header>
-            <ul class="nav container-fluid"> 
-                 <li class="nav-item">
-                    <a class=" nav-link btn btn-outline-dark" aria-current="page" href="index.php">  <h3><img src="img/logo.svg" alt="" width="60" height="48" class="d-inline-block align-text-top">
-                       APP PHP</h3></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" href="index.php"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fas fa-user-lock btn btn-outline-dark" href="admin.php"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fas fa-shopping-cart btn btn-outline-dark position-relative" href="recap.php"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><?= getFullQtt() ?></span></a>
-                </li>
-                
-            </ul>
+            <div class="container">
+                <ul class="nav container-fluid">
+                    <li class="nav-item">
+                        <a class=" nav-link btn btn-outline-dark" aria-current="page" href="index.php">
+                            <h3><img src="img/logo.svg" alt="" width="60" height="48" class="d-inline-block align-text-top">
+                                APP PHP</h3>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" href="index.php"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-user-lock btn btn-outline-dark" href="admin.php"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-shopping-cart btn btn-outline-dark position-relative" href="recap.php"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><?= getFullQtt() ?></span></a>
+                    </li>
+                   
+                </ul>
+            </div>
+
             <?= getMessage() ?>
 
 

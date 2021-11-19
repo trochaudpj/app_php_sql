@@ -1,6 +1,9 @@
-<?php echo "<div class='box " . $affichage . "'><img class='vignette' src='img/" . $row['img'] . "' width=200><br>";
+<?php echo "<div   class='figure box " . $affichage ." " . $row['name_categorie'] ."'><img class='vignette' src='img/" . $row['img'] . "' width=200><br>";
 echo "<div><div><h2><a  href='product.php?id=" . $row['id'] . "'>" . $row['name'] ." ". "</a></h2></div><div><h2>" . $row['price'] . "€</h2></div></div><div><p>" . $row['description'] . "</p></div>";
-echo "<form method='POST' action='traitement.php?action=addProd&id=" . $row['id'] . "'>"; ?>
+echo "<em>#". $row['name_categorie']."</em>";
+echo "<form method='POST' action='traitement.php?action=addProd&id=" . $row['id'] . "'>"; 
+
+?>
 <label>Ajouter au panier</label>
 <div>
 <select  id="Qadd" name="Qadd" value='1'>

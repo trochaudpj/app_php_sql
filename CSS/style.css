@@ -55,42 +55,31 @@ form>.container{
     text-align: left;
     flex-direction: column;
 }
-nav>.container{
-    width: fit-content;
-    text-align: left;
-  
-}
-nav>.containerR{
-    width: fit-content;
-    text-align: right;
-   
-}
+
 .vignette{
     border: 5px ridge  rgb(0, 0, 0);
     border-radius: 5px 25px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .card{
-   margin-bottom: 10%;
-    width: 300px;
+    width: 250px;
 }
 .card>.vignette{
-    width: 150px;
+    width: 125px;
 }
 .screen{
     max-width: 1000px;
     width: fit-content;
 }
 .main{
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .screen.vignette{
     width: 300px;
 }
 #recap {
     padding: 3em;
-    
   }
   
 #gallery{
@@ -99,13 +88,9 @@ nav>.containerR{
 
 #gallery .figure{
     display:initial;
-   
-     
  }
 #gallery .figure.hidden{
    display: none;
-  
-    
 }
 
 #gallery-menu{

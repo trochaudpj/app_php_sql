@@ -4,7 +4,7 @@ include "functions.php";
 require_once("db-function.php");
 $action = filter_input(INPUT_GET, "action", FILTER_VALIDATE_REGEXP, [
     "options" => [
-        "regexp" => "/addProd|ajoutBdd|modifBdd|updateQtt|deleteProd|deleteAll/"
+        "regexp" => "/addProd|ajoutBdd|delProduct|modifBdd|updateQtt|deleteProd|deleteAll/"
     ]
 ]);
 
@@ -20,7 +20,7 @@ if ($action) {
                 $img = filter_input(INPUT_POST, "img", FILTER_SANITIZE_URL);
                 $categorie = filter_input(INPUT_POST, "categorie", FILTER_VALIDATE_INT);
 
-                $redirect = insertProduct($name, $description, $price, $img,$categorie);
+                $redirect = insertProduct($name, $description, $price, $img, $categorie);
 
                 setMessage("success", "Produit ajouté avec succès !");
                 redirect("product.php?id=" . $redirect);
@@ -38,8 +38,8 @@ if ($action) {
                 $categorie = filter_input(INPUT_POST, "categorie", FILTER_VALIDATE_INT);
 
                 $id = $_GET['id'];
-                $redirect = modifProduct($name, $description, $price, $img,$categorie, $id);
-                
+                $redirect = modifProduct($name, $description, $price, $img, $categorie, $id);
+
                 setMessage("success", "Produit modifié avec succès !");
                 redirect("product.php?id=" . $id);
             } else {
@@ -136,7 +136,15 @@ if ($action) {
                 setMessage("success", "Le produit $name a été supprimé !");
             } else setMessage("error", "Le produit n'existe pas !");
             break;
-
+        case "delProduct":
+           $result= deleteProduct($_GET['id']);
+           if (isset($result)) {
+               
+                setMessage("success", "Le produit a été supprimé !");
+           }else setMessage("error", "Le produit n'existe pas !");
+           
+            redirect("index.php");
+            break;
         case "deleteAll":
             if (isset($_SESSION['products'])) {
                 unset($_SESSION['products']);
@@ -145,5 +153,3 @@ if ($action) {
             break;
     }
 }
-
-redirect("recap.php");

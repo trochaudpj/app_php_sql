@@ -71,3 +71,10 @@ function modifProduct($name, $description, $price,$img,$categorie,$id)
     $lastId = $bddtmp->lastInsertId();
     return $lastId;
 }
+function deleteProduct($id){
+    $sql = "DELETE FROM product WHERE id=:id";
+    $stmt = connexion()->prepare($sql);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    return $stmt;
+};

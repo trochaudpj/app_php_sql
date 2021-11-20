@@ -7,6 +7,7 @@ include "menu.php";
         unset($page);
         if (isset($_GET['id'])) {
             $page = findOneById($_GET['id']);
+           echo "<a href='traitement.php?action=delProduct&id=". $_GET['id']."&mode=decr'><i class='far fa-trash-alt'></i>Effacer<i class='far fa-trash-alt'></i></a>";
             echo "<form action='traitement.php?action=modifBdd&id=" . $_GET['id'] . "' method='POST'>";
         } else {
             echo "<form action='traitement.php?action=ajoutBdd' method='POST'>";

@@ -6,10 +6,18 @@ body {
     margin: 0;
     background-image: repeating-linear-gradient(135deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229, 71,0.08) 1px,transparent 1px, transparent 9px),repeating-linear-gradient(45deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229, 71,0.08) 1px,transparent 1px, transparent 9px),linear-gradient(90deg, rgb(77, 18, 84),rgb(52, 161, 185));
 }
-a , .nav-link{
+.nav-link{
     margin-left: 1em;
     color: black;
     text-decoration: none;
+}
+a{
+    margin: 1em;
+    color: black;
+    text-decoration: none; 
+}
+a:hover{
+    text-shadow: 3px 3px 2px #474747;
 }
 header {
     width: 100%;
@@ -35,9 +43,10 @@ header {
     background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4  ),rgba(185, 184, 184, 0.4));
     margin: 1em;
     padding: 1em;
-    border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 10px; 
     border: 1px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   
 }
 .success{
     background-color: rgb(129, 255, 157);
@@ -72,6 +81,7 @@ form>.container{
     width: fit-content;
 }
 .main{
+ 
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -96,6 +106,15 @@ form>.container{
 #gallery-menu{
     display: flex;
     justify-content: space-between;
+}
+.container .menu{
+    margin: 0.3em;
+    padding: 0.3em;
+    width: fit-content;
+    text-decoration: blanchedalmond;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.267);
+    transform: skewX(-25deg);
 }
 
 

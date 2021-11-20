@@ -153,3 +153,4 @@ if ($action) {
             break;
     }
 }
+redirect("recap.php");

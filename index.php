@@ -3,7 +3,8 @@ include "menu.php";
 $loop = findAllCategorie();
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     
-?> <div class="container main">
+?> <div class="container">
+    <div class=" menu box">
         <nav id="gallery-menu" class="side-spaced">
             <div id="gallery-filters"><a class="active" href="#">ALL</a>
                 <?php foreach ($loop as $index => $id_categorie) {
@@ -18,7 +19,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
                 ?>
             </div>
         </nav>
-    </div>
+    </div></div>
 <?php } ?>
 <div id="gallery" class="container main">
     <?php

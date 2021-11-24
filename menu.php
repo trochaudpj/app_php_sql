@@ -1,6 +1,8 @@
 <?php session_start();
 require_once("db-function.php");
 require_once("functions.php");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,15 +32,20 @@ require_once("functions.php");
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Accueil" href="index.php"></a>
+                        <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Accueil" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fas fa-user-lock btn btn-outline-dark" href="admin.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nouveau produit"></a>
+                        <a class="nav-link fas fa-user-lock btn btn-outline-dark" href="admin.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nouveau produit">New product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fas fa-shopping-cart btn btn-outline-dark position-relative" href="recap.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Panier"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><?= getFullQtt() ?></span></a>
+                        <a class="nav-link fas fa-shopping-cart btn btn-outline-dark position-relative" href="recap.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Panier"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><?= getFullQtt() ?></span>panier</a>
                     </li>
-                   
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login" href="login.php">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-home  btn btn-outline-dark" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Register" href="register.php">register</a>
+                    </li>
                 </ul>
             </div>
 

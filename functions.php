@@ -13,11 +13,10 @@
     function getMessage(): void
     {
         if(isset($_SESSION["message"])){
-            ?><div class="alert alert-warning alert-dismissible fade show" role='<?= $_SESSION["message"]['type'] ?>'>
-                
+            ?>
+                <p id="message" class='<?= $_SESSION["message"]['type'] ?>'>
                     <?= $_SESSION["message"]['msg'] ?> 
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+                </p>
             <?php
                 unset($_SESSION["message"]);
         }
@@ -33,4 +32,3 @@
         header("Location:".$url);
         die;
     }
-    

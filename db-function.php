@@ -72,20 +72,18 @@ function findOneById($id)
  * @param categorie $categorie la categorie du produit
  * @return int|false un entier du produit insere ou FALSE si aucun produit n'a été insere
  */
-function insertProduct($name, $description, $price, $img, $categorie)
+function insertProduct($name, $price, $descr)
 {
-    $sql = "INSERT INTO product (name, description, price, img,categorie) VALUES (:name,:description,:price,:img,:categorie)";
-    $bddtmp = connexion();
-    $stmt = $bddtmp->prepare($sql);
-    $stmt->bindParam(":name", $name);
-    $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":price", $price);
-    $stmt->bindParam(":img", $img);
-    $stmt->bindParam(":categorie", $categorie);
+    $db = connexion();
+    $sql = "INSERT INTO product (name, price, description) VALUES (:n, :p, :d)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(":n", $name);
+    $stmt->bindParam(":p", $price);
+    $stmt->bindParam(":d", $descr);
     $stmt->execute();
-    $lastId = $bddtmp->lastInsertId();
-    return $lastId;
+    return intval($db->lastInsertId());
 }
+
 function modifProduct($name, $description, $price, $img, $categorie, $id)
 {
     $sql = "UPDATE product SET name =:name, description=:description, price=:price, img=:img, categorie=:categorie where id=:id";
@@ -108,4 +106,28 @@ function deleteProduct($id)
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     return $stmt;
-};
+}
+/**
+ * Met à jour le produit répondant à $id avec les $name, $price et $descr fournis
+ * 
+ * @param string $id l'id du produit à modifier
+ * @param string $name le nouveau nom du produit
+ * @param string $price le nouveau prix du produit
+ * @param string $descr la nouvelle description du produit
+ * 
+ * @return bool TRUE si succès de la requète de mise à jour, FALSE sinon
+ */
+function updateProduct($id, $name, $price, $descr, $image = null)
+{
+    $db = connexion();
+    $sql = "UPDATE product 
+                SET name = :n, price = :p, description = :d
+                WHERE id = :id";
+    $stmt = $db->prepare($sql);
+    return $stmt->execute([
+        ":id" => $id,
+        ":n"  => $name,
+        ":p"  => $price,
+        ":d"  => $descr,
+    ]);
+}

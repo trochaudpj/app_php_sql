@@ -12,6 +12,8 @@
 </head>
 <body>
     <?php include "menu.php"; ?>
+    <div class="container main">
+    <div class="box">
     <main>
         <form action="security.php?action=login" method="post">
             <p>
@@ -31,6 +33,6 @@
             </p>
         </form>
     </main>
-    
+    </div></div>
 </body>
 </html>
